@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { supabase } from "../../../lib/supabase";
+import Swal from 'sweetalert2'
 
 export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const formData = await request.formData();
@@ -16,7 +17,8 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   });
 
   if (error) {
-    return new Response(error.message, { status: 500 });
+    cookies.set("error","true" , {path: "/"});
+    return redirect("/signin");
   }
 
   const { access_token, refresh_token } = data.session;

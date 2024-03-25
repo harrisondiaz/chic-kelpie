@@ -1,0 +1,19 @@
+---
+
+---
+
+<div class="flex flex-col hover:blur-0 h-full bg-center bg-cover items-center justify-center w-full gap-5 bg-gradient-to-tr from-sky-700 to-sky-500">
+
+</div>
+<script>
+  import type { APIRoute } from "astro";
+  import Swal from "sweetalert2";
+  Swal.fire({
+    title: "¡Ups! Ha ocurrido un error",
+    text: "Por favor, verifica tus credenciales e intenta de nuevo.",
+    icon: "error",
+    confirmButtonText: "Entendido",
+    
+  });
+  return redirect("/login");
+</script>
