@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { supabase } from "../lib/supabase";
 
 import NavBar from "../components/NavBar.astro";
-import Swal from "sweetalert2";
+
 
 const { cookies, redirect } = Astro;
 
@@ -36,8 +36,8 @@ if (name == "harryjhoi01@gmail.com") {
 } else {
   name = "Maryuri";
 }
-const response = await fetch(
+/*const response = await fetch(
   "192.",
-);
+);*/
 ---
 <NavBar name={name} />

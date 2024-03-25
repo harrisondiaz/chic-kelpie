@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { supabase } from "../../../lib/supabase";
-import Swal from 'sweetalert2'
 
 export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const formData = await request.formData();

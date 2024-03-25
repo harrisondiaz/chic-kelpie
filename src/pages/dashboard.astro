@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import { supabase } from "../lib/supabase";
 
 import NavBar from "../components/NavBar.astro";
-import Swal from "sweetalert2";
 
 const { cookies, redirect } = Astro;
 
@@ -103,25 +102,6 @@ if (name == "harryjhoi01@gmail.com") {
       }
       return false;
     }
-
-    function successfull() {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "¡Hola!, Bienvenida a tu dashboard.",
-      });
-    }
-    window.addEventListener("load", successfull);
   </script>
 </Layout>
 
