@@ -75,7 +75,7 @@ const { error= isError } = Astro.props;
   </div>
 </Layout>
 
-<script is:inline >
+<script is:inline define:vars={{error}}>
     
   window.addEventListener("load", ()=>{
     let element = document.getElementById("alert");
